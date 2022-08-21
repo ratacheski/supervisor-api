@@ -1,3 +1,6 @@
 server:
   port: 9021
 
+spring:
+  application:
+    name: Supervisor Alerts
