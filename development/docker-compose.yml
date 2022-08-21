@@ -1,0 +1,46 @@
+version: "3.2"
+
+services:
+  mongodb:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=devroot
+      - MONGO_INITDB_ROOT_PASSWORD=devroot
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb:/data/db
+  mongo-express:
+    image: mongo-express
+    restart: always
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+      - ME_CONFIG_MONGODB_AUTH_USERNAME=devroot
+      - ME_CONFIG_MONGODB_AUTH_PASSWORD=devroot
+      - ME_CONFIG_BASICAUTH_USERNAME=dev
+      - ME_CONFIG_BASICAUTH_PASSWORD=dev
+    links:
+      - mongodb
+    ports:
+      - "8081:8081"
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./rabbitmq/data/:/var/lib/rabbitmq/
+      - ./rabbitmq/log/:/var/log/rabbitmq
+  modbus-server:
+    container_name: modbus-server
+    image: oitc/modbus-server
+    restart: always
+    command: -f /server_config.json
+    ports:
+      - 5020:5020
+    volumes:
+      - ./server_config.json:/server_config.json:ro
