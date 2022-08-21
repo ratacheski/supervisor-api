@@ -5,6 +5,8 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/ratacheski/supervisor-api?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/ratacheski/supervisor-api?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/ratacheski/supervisor-api?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/ratacheski/supervisor-api?style=for-the-badge)
+![GitHub license](https://img.shields.io/github/license/ratacheski/supervisor-api?style=for-the-badge)
 
 <img src="arquitetura-sistema.png" alt="arquitetura do sistema">
 
