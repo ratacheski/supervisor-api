@@ -30,8 +30,8 @@ services:
     image: rabbitmq:3-management-alpine
     container_name: 'rabbitmq'
     ports:
-      - 5672:5672
-      - 15672:15672
+      - "5672:5672"
+      - "15672:15672"
     volumes:
       - ./rabbitmq/data/:/var/lib/rabbitmq/
       - ./rabbitmq/log/:/var/log/rabbitmq
@@ -41,6 +41,6 @@ services:
     restart: always
     command: -f /server_config.json
     ports:
-      - 5020:5020
+      - "5020:5020"
     volumes:
       - ./server_config.json:/server_config.json:ro
