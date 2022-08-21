@@ -75,7 +75,7 @@ em [como criar uma solicitação pull](https://help.github.com/en/github/collabo
 Estão envolvidos neste projeto:
 <div>
     <a href="https://github.com/ratacheski">
-        <img src="https://avatars.githubusercontent.com/u/15971103?v=4" width="100px;" alt="Foto de Rafael Ratacheski no GitHub" style="border-radius: 50% !important"/><br>
+        <img src="https://avatars.githubusercontent.com/u/15971103?v=4" width="100px;" alt="Foto de Rafael Ratacheski no GitHub" style="border-radius: 50%"/><br>
         <sub>
             <b>Rafael Ratacheski</b>
         </sub>
