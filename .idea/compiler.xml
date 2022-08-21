@@ -16,9 +16,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="supervisor" options="-parameters" />
-      <module name="supervisor-alerts" options="-parameters" />
-      <module name="supervisor-api" options="-parameters" />
-      <module name="supervisor-sincronizer" options="-parameters" />
+      <module name="supervisor-alerts" options="" />
+      <module name="supervisor-api" options="" />
+      <module name="supervisor-sincronizer" options="" />
     </option>
   </component>
 </project>

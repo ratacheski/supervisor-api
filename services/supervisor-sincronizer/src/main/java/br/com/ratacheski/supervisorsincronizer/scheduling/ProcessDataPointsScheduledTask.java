@@ -2,8 +2,7 @@ package br.com.ratacheski.supervisorsincronizer.scheduling;
 
 import de.re.easymodbus.exceptions.ModbusException;
 import de.re.easymodbus.modbusclient.ModbusClient;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,9 +16,8 @@ import java.util.Random;
 
 @EnableAsync
 @Component
+@Slf4j
 public class ProcessDataPointsScheduledTask {
-
-    Logger logger = LogManager.getLogger(ProcessDataPointsScheduledTask.class);
 
     private static final String HOST = "localhost";
     private static final int PORT = 5020;
@@ -27,7 +25,7 @@ public class ProcessDataPointsScheduledTask {
     @Async
     @Scheduled(fixedRate = 1000)
     public void processDataPoints() {
-        logger.info("Implementation of obtaining measurements from data sources");
+        log.info("Implementation of obtaining measurements from data sources");
         PrintStream out = System.out;
         System.setOut(new PrintStream(new OutputStream() {
             @Override
@@ -42,14 +40,14 @@ public class ProcessDataPointsScheduledTask {
         }
         try {
             modbusClient.Connect();
-            logger.info("Connected to Modbus Server");
+            log.info("Connected to Modbus Server");
             modbusClient.WriteSingleRegister(getRandomNumber(0,10),getRandomNumber(1,200));
-            var holdingRegisters = modbusClient.ReadHoldingRegisters(0, 10);
-            logger.info("holdingRegisters: {}", Arrays.toString(holdingRegisters));
+            int[] holdingRegisters = modbusClient.ReadHoldingRegisters(0, 10);
+            log.info("holdingRegisters: {}", Arrays.toString(holdingRegisters));
         } catch (IOException e) {
-            logger.error("Cannot connect to Modbus Server: {}", e.getMessage());
+            log.error("Cannot connect to Modbus Server: {}", e.getMessage());
         } catch (ModbusException e) {
-            logger.error("Error reading Registers: {}", e.getMessage());
+            log.error("Error reading Registers: {}", e.getMessage());
         }
     }
 
@@ -57,4 +55,5 @@ public class ProcessDataPointsScheduledTask {
         Random random = new Random();
         return random.nextInt(max - min) + min;
     }
+
 }
