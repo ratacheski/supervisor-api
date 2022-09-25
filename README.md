@@ -1,4 +1,4 @@
-# Supervisor API
+# Supervisor UFG
 
 <!--- Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, estado do projeto e informações de licença aqui--->
 
@@ -40,26 +40,26 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Em construção.
 ```
 
-## 🚀 Instalando Supervisor API
+## 🚀 Instalando Supervisor UFG
 
-Para instalar o Supervisor API, siga estas etapas:
-
-```
-Em construção.
-```
-
-## ☕ Usando Supervisor API
-
-Para usar Supervisor API, siga estas etapas:
+Para instalar o Supervisor UFG, siga estas etapas:
 
 ```
 Em construção.
 ```
 
-## 📫 Contribuindo para Supervisor API
+## ☕ Usando Supervisor UFG
+
+Para usar Supervisor UFG, siga estas etapas:
+
+```
+Em construção.
+```
+
+## 📫 Contribuindo para Supervisor UFG
 
 <!--— Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
-Para contribuir com Supervisor API, siga estas etapas:
+Para contribuir com Supervisor UFG, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
