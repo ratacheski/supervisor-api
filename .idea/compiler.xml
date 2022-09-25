@@ -7,18 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="supervisor-alerts" />
-        <module name="supervisor-sincronizer" />
         <module name="supervisor-api" />
+        <module name="supervisor-alerts" />
+        <module name="supervisor-synchronizer" />
+        <module name="domain" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="supervisor" options="-parameters" />
-      <module name="supervisor-alerts" options="" />
-      <module name="supervisor-api" options="" />
-      <module name="supervisor-sincronizer" options="" />
+      <module name="domain" options="-parameters" />
+      <module name="supervisor-alerts" options="-parameters" />
+      <module name="supervisor-api" options="-parameters" />
+      <module name="supervisor-synchronizer" options="-parameters" />
     </option>
   </component>
 </project>

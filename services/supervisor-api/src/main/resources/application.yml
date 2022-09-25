@@ -2,5 +2,9 @@ server:
   port: 9011
 
 spring:
+  data:
+    mongodb:
+      database: supervisor
+      uri: mongodb+srv://supervisor-user:supervisor-pass@supervisor.8z10xdj.mongodb.net/?retryWrites=true&w=majority
   application:
     name: Supervisor API
